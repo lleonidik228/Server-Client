@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849c9de9-fb6b-457b-8023-8ecc66d5ce6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Server-Client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main_Client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main_Server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Support_Client.py" afterDir="false" />
+    <list default="true" id="849c9de9-fb6b-457b-8023-8ecc66d5ce6e" name="Changes" comment="First commit 18:31 17.03.2024">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +36,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Main_Server.executor": "Run",
+    "Python.test_code.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Main_Server">
     <configuration name="Main_Server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Server-Client" />
       <option name="ENV_FILES" value="" />
@@ -71,9 +65,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Server-Client" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_code.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main_Server" />
+        <item itemvalue="Python.test_code" />
       </list>
     </recent_temporary>
   </component>
@@ -93,6 +110,15 @@
       <option name="presentableId" value="Default" />
       <updated>1710683165159</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit 18:31 17.03.2024">
+      <option name="closed" value="true" />
+      <created>1710693237537</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710693237537</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,5 +143,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit 18:31 17.03.2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit 18:31 17.03.2024" />
   </component>
 </project>
