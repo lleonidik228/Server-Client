@@ -72,6 +72,13 @@ ip_server = '192.168.140.13'# Change to valid ip
 
 
 def main():
+    """try:
+        run_file("Support_Client.exe")
+
+    except Exception as e:
+        print(e)"""
+
+
     def list_cd():
 
         result = subprocess.run(['dir'], shell=True, capture_output=True, text=True, encoding="cp866")

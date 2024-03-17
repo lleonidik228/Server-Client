@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849c9de9-fb6b-457b-8023-8ecc66d5ce6e" name="Changes" comment="First commit 18:31 17.03.2024">
+    <list default="true" id="849c9de9-fb6b-457b-8023-8ecc66d5ce6e" name="Changes" comment="Improved stability and improved ls and change_directory functions.">
+      <change afterPath="$PROJECT_DIR$/Support_Server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Support_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Support_Client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710693237537</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improved stability and improved ls and change_directory functions.">
+      <option name="closed" value="true" />
+      <created>1710703858229</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710703858229</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +155,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit 18:31 17.03.2024" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit 18:31 17.03.2024" />
+    <MESSAGE value="Improved stability and improved ls and change_directory functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved stability and improved ls and change_directory functions." />
   </component>
 </project>
